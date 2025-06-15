@@ -1,8 +1,9 @@
 import React from 'react';
-import { SafeAreaView, View, Text, FlatList, StyleSheet } from 'react-native';
+import { SafeAreaView, FlatList, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts, PlayfairDisplay_700Bold } from '@expo-google-fonts/playfair-display';
 import AppLoading from 'expo-app-loading';
+import { WordCard } from './WordCard';
 
 const WORDS = [
   { id: '1', word: 'antediluvian', definition: 'Extremely old; antiquated.' },
@@ -12,14 +13,6 @@ const WORDS = [
   { id: '5', word: 'callipygian', definition: 'Having well-shaped buttocks.' }
 ];
 
-function WordCard({ word, definition }: { word: string; definition: string }) {
-  return (
-    <View style={styles.card}>
-      <Text style={styles.word}>{word}</Text>
-      <Text style={styles.definition}>{definition}</Text>
-    </View>
-  );
-}
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -50,26 +43,5 @@ const styles = StyleSheet.create({
   },
   list: {
     padding: 16,
-  },
-  card: {
-    marginBottom: 20,
-    padding: 24,
-    backgroundColor: '#ffffff',
-    borderRadius: 12,
-    shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowOffset: { width: 0, height: 4 },
-    shadowRadius: 12,
-    elevation: 3,
-  },
-  word: {
-    fontFamily: 'PlayfairDisplay_700Bold',
-    fontSize: 28,
-    marginBottom: 8,
-  },
-  definition: {
-    fontSize: 18,
-    lineHeight: 24,
-    color: '#333',
   },
 });
