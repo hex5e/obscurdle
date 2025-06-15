@@ -1,5 +1,5 @@
-import React from 'react';
-import { SafeAreaView, FlatList, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { SafeAreaView, StyleSheet, Pressable } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts, PlayfairDisplay_700Bold } from '@expo-google-fonts/playfair-display';
 import AppLoading from 'expo-app-loading';
@@ -19,18 +19,29 @@ export default function App() {
     PlayfairDisplay_700Bold,
   });
 
+  const [index, setIndex] = useState(0);
+  const [reveal, setReveal] = useState(false);
+
   if (!fontsLoaded) {
     return <AppLoading />;
   }
 
+  const current = WORDS[index];
+
+  const handlePress = () => {
+    if (reveal) {
+      setIndex(Math.floor(Math.random() * WORDS.length));
+      setReveal(false);
+    } else {
+      setReveal(true);
+    }
+  };
+
   return (
     <SafeAreaView style={styles.container}>
-      <FlatList
-        data={WORDS}
-        renderItem={({ item }) => <WordCard word={item.word} definition={item.definition} />}
-        keyExtractor={(item) => item.id}
-        contentContainerStyle={styles.list}
-      />
+      <Pressable style={styles.flex} onPress={handlePress}>
+        <WordCard word={current.word} definition={current.definition} reveal={reveal} />
+      </Pressable>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -41,7 +52,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fafafa',
   },
-  list: {
+  flex: {
+    flex: 1,
+    justifyContent: 'center',
     padding: 16,
   },
 });
