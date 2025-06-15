@@ -1,13 +1,19 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
+    "module": "NodeNext",
     "jsx": "react",
     "strict": true,
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext", // valid for customConditions
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
+    // If you need "customConditions", add it here, otherwise ensure it's not present
+    // "customConditions": ["your-condition"] // Uncomment and set if needed
   },
-  "exclude": ["node_modules", "**/node_modules/*"]
+  "exclude": [
+    "node_modules",
+    "**/node_modules/*"
+  ],
+  "extends": "expo/tsconfig.base"
 }
