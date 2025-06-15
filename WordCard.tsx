@@ -1,11 +1,19 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export function WordCard({ word, definition }: { word: string; definition: string }) {
+export function WordCard({
+  word,
+  definition,
+  reveal,
+}: {
+  word: string;
+  definition: string;
+  reveal?: boolean;
+}) {
   return (
     <View style={styles.card}>
       <Text style={styles.word}>{word}</Text>
-      <Text style={styles.definition}>{definition}</Text>
+      {reveal && <Text style={styles.definition}>{definition}</Text>}
     </View>
   );
 }
