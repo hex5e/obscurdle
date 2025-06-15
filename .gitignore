@@ -1,6 +1,23 @@
+# Dependencies
 node_modules/
 package-lock.json
-npm-install.log
-.env
-.DS_Store
+yarn.lock
+npm-debug.log*
 
+# Build artifacts
+dist/
+build/
+
+# Expo
+.expo/
+.expo-shared/
+
+# Environment variables
+.env
+
+# IDE directories
+.vscode/
+.idea/
+
+# macOS files
+.DS_Store
