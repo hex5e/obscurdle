@@ -1,0 +1,20 @@
+{
+  "name": "obscurdle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "expo": "^53.0.11",
+    "expo-app-loading": "^2.1.1",
+    "expo-font": "^13.3.1",
+    "react": "^19.1.0",
+    "react-native": "^0.80.0"
+  }
+}
