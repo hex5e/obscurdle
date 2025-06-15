@@ -1,5 +1,6 @@
 import React from 'react';
-import { SafeAreaView, View, Text, FlatList, StyleSheet, StatusBar } from 'react-native';
+import { SafeAreaView, View, Text, FlatList, StyleSheet } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import { useFonts, PlayfairDisplay_700Bold } from '@expo-google-fonts/playfair-display';
 import AppLoading from 'expo-app-loading';
 
