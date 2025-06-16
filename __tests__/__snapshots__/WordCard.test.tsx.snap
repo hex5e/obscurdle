@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
-
-exports[`renders word and definition when revealed 1`] = `null`;
-
-exports[`renders word only when not revealed 1`] = `null`;
